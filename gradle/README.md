@@ -14,6 +14,8 @@ WARNING:
 
 -->
 
+**Note:** this is the "per-architecture" repository for the `arm32v7` builds of [the `gradle` official image](https://hub.docker.com/_/gradle) -- for more information, see ["Architectures other than amd64?" in the official images documentation](https://github.com/docker-library/official-images#architectures-other-than-amd64) and ["An image's source changed in Git, now what?" in the official images FAQ](https://github.com/docker-library/faq#an-images-source-changed-in-git-now-what).
+
 # Quick reference
 
 -	**Maintained by**:  
@@ -30,6 +32,8 @@ WARNING:
 -	[`6.9.1-jdk8`, `6.9-jdk8`, `6-jdk8`](https://github.com/keeganwitt/docker-gradle/blob/c1589fa3ca8eca327c505c1a088902e83cac9b3e/jdk8/Dockerfile)
 -	[`6.9.1-jdk11`, `6.9-jdk11`, `6-jdk11`](https://github.com/keeganwitt/docker-gradle/blob/c1589fa3ca8eca327c505c1a088902e83cac9b3e/jdk11/Dockerfile)
 -	[`6.9.1-jdk17`, `6.9-jdk17`, `6-jdk17`, `6.9.1-jdk`, `6.9-jdk`, `6-jdk`, `6.9.1`, `6.9`, `6`](https://github.com/keeganwitt/docker-gradle/blob/c1589fa3ca8eca327c505c1a088902e83cac9b3e/jdk17/Dockerfile)
+
+[![arm32v7/gradle build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/multiarch/job/arm32v7/job/gradle.svg?label=arm32v7/gradle%20%20build%20job)](https://doi-janky.infosiftr.net/job/multiarch/job/arm32v7/job/gradle/)
 
 # Quick reference (cont.)
 
@@ -62,7 +66,7 @@ WARNING:
 
 Run this from the directory of the Gradle project you want to build.
 
-`docker run --rm -u gradle -v "$PWD":/home/gradle/project -w /home/gradle/project gradle gradle <gradle-task>`
+`docker run --rm -u gradle -v "$PWD":/home/gradle/project -w /home/gradle/project arm32v7/gradle gradle <gradle-task>`
 
 Note the above command runs using uid/gid 1000 (user *gradle*) to avoid running as root.
 
